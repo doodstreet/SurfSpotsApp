@@ -1,5 +1,5 @@
 
-<h2>Python Live Project Intership</h2>
+<h2>Surf Spots Python Internship App</h2>
    <p>This was an intership experience with Prosper I.T. Consulting. This project was a great experience for me. We used Slack
  for team communication and Azure DevOps for project management during this two week sprint. I created a Surf Spots App as part of a much larger 
  Hobby Tracker website and created a database for the App to connect with and log favorite surf spots with full CRUD functionality.
