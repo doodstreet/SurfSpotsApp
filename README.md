@@ -1,14 +1,10 @@
 
 <h2>Surf Spots Python Internship App</h2>
-   <p>This was an intership experience with Prosper I.T. Consulting. This project was a great experience for me. We used Slack
- for team communication and Azure DevOps for project management during this two week sprint. I created a Surf Spots App as part of a much larger 
- Hobby Tracker website and created a database for the App to connect with and log favorite surf spots with full CRUD functionality.
- This included using Python3 in virtual environments, Pycharm as the IDE and Git as version control. The parameters of this project were to create a list
- of something of personal interest with (CRUD) the ablity to Create, Read, Update, Delete and see details plus apply CSS styling and app functionality.<br>
-   I created a "Surf Spots" app to save a list of all my favorite surf spots with details about each spot and the ablitiy to add, change and delete
- content.<br>
- Here is a code example of my views for this project:</p>
- <br>
+<p>Hi, my name is Dave Street. I completed Software Developer Boot Camp and earned my certification from The Tech Academy. This was an intership experience  with Prosper I.T. Consulting. This project was a great experience for me using Agile/Scrum methodologies during this two week sprint. I created a Surf Spots  App as part of a much larger Hobby Tracker website and created a database for the App to connect with and log favorite surf spots with full CRUD functionality.
+This included using Python3 in virtual environments, Pycharm as the IDE and Git as version control..<br>
+<br>
+Here is a code example of my views for this project:</p>
+<br>
 
  Home page ------------
  ![SurfSpotsAppHome](https://user-images.githubusercontent.com/68976585/103727518-50896a80-4f90-11eb-89ce-df33eeeb3dde.png)
