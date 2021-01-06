@@ -11,6 +11,8 @@
  <br>
 
  Home page ------------
+ ![SurfSpotsAppHome](https://user-images.githubusercontent.com/68976585/103727518-50896a80-4f90-11eb-89ce-df33eeeb3dde.png)
+
 ```
 def surfApp_home(request):
     # get the list of spotNames to show your list of favorite spots on the home page
@@ -20,6 +22,7 @@ def surfApp_home(request):
     return render(request, 'surfApp/surfApp_home.html', context)
 ```    
  Add Spot page-----use model to create a form and post to database
+ ![SurfSpotAppCreate](https://user-images.githubusercontent.com/68976585/103727616-8e868e80-4f90-11eb-91bc-8ca284f71b18.png)
 ```
 def surfApp_addSpot(request):
     # gets requested form if exists
@@ -39,6 +42,7 @@ def surfApp_addSpot(request):
     return render(request, 'surfApp/surfApp_addSpot.html',  context)
 ```
  Index page---- use index function to get database objects and render them on the index page.
+ ![SurfSpotAppIndex](https://user-images.githubusercontent.com/68976585/103727699-c1308700-4f90-11eb-89da-e3565d74c35f.png)
 ```
 def surfApp_index(request):
     # gets all posts from database
@@ -50,6 +54,7 @@ def surfApp_index(request):
     return render(request, 'surfApp/surfApp_index.html', context)
 ```
   Details page---- use primary key to get details from that item
+  ![SurfSpotAppDetails](https://user-images.githubusercontent.com/68976585/103727727-d5748400-4f90-11eb-8a85-52037cb052d5.png)
 ```
 def surfApp_details(request, pk):
     # gets a single instance of the SurfSpot model object from the database
@@ -85,6 +90,7 @@ def surfApp_delete(request, pk):
     return render(request, 'surfApp/surfApp_delete.html', context)
 ```
  Confirm delete-- renders delete page for confirmation of action
+ ![SurfSpotsAppDelete](https://user-images.githubusercontent.com/68976585/103727794-0b196d00-4f91-11eb-8b98-6f1a1667c5f8.png)
 ```
 def confirm_delete(request, pk):
     pk = int(pk)
