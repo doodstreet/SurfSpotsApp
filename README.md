@@ -65,17 +65,31 @@ class SurfSpot(models.Model):
     def __str__(self):
         return self.spotName
 ```
- Index page---- use index function to get database objects and render them on the index page.
+ Index page---- use index function to get database objects and render them on the index page with link for details.
  ![SurfSpotAppIndex](https://user-images.githubusercontent.com/68976585/103727699-c1308700-4f90-11eb-89da-e3565d74c35f.png)
+This is the Index page that gets all saved spots from the database as dictionary items to render as a list, 
+each spot with a link to its own details page. 
 ```
 def surfApp_index(request):
-    # gets all posts from database
+# gets all posts from database
     spots = SurfSpot.objects.all()
- print to terminal to make sure data is populating
+#print to terminal to make sure data is populating
     print(spots)
- creates dictionary for items in the database and passes the args to the page
+#creates dictionary for items in the database and passes the args to the page
     context = {'spots': spots, }
     return render(request, 'surfApp/surfApp_index.html', context)
+```
+Here in my Index Template is the anchor tag with the link to each 'SpotDetails'.
+```
+{% block content %}
+
+{% for spot in spots %}
+<!-- passing an argument or variable through url (had a no reverse match error)-->
+<a href="{% url 'SpotDetails' spot.pk %}" ><h3>{{ spot.spotName | upper }} ~ {{ spot.location | title }} ~ Rating: {{ spot.rating }}</h3></a>
+
+{% endfor %}
+
+{% endblock %}
 ```
   Details page---- use primary key to get details from that item
   ![SurfSpotAppDetails](https://user-images.githubusercontent.com/68976585/103727727-d5748400-4f90-11eb-8a85-52037cb052d5.png)
