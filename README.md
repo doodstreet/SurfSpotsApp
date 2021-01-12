@@ -5,7 +5,7 @@ This included using Python3 in virtual environments, Pycharm as the IDE and Git 
 <br>
 Here is a code example of my views for this project:
 <br>
- Home page ------------<br>
+ Home page ------<br>
  
 ![SurfSpotsAppHome](https://user-images.githubusercontent.com/68976585/103727518-50896a80-4f90-11eb-89ce-df33eeeb3dde.png)
 <br>
@@ -18,7 +18,7 @@ def surfApp_home(request):
 #link to home page and display requested content
     return render(request, 'surfApp/surfApp_home.html', context)
 ```    
- Add Spot page-----use model to create a form and post to database
+ Add Spot page ------ use model to create a form and post to database
  ![SurfSpotAppCreate](https://user-images.githubusercontent.com/68976585/103727616-8e868e80-4f90-11eb-91bc-8ca284f71b18.png)
  This is the Add your spots page that will display a surf spot form and if filled out properly, will save it to the database 
  and redirect to show the new spot on the index page. If the form is not filled out properly it will request necessary fields 
@@ -65,7 +65,7 @@ class SurfSpot(models.Model):
     def __str__(self):
         return self.spotName
 ```
- Index page---- 
+ Index page ------ 
  ![SurfSpotAppIndex](https://user-images.githubusercontent.com/68976585/103727699-c1308700-4f90-11eb-89da-e3565d74c35f.png)
 This is the Index page that gets all saved spots from the database as dictionary items to render as a list, 
 each spot with a link to its own details page. 
@@ -79,7 +79,7 @@ def surfApp_index(request):
     context = {'spots': spots, }
     return render(request, 'surfApp/surfApp_index.html', context)
 ```
-Here in my Index Template is the anchor tag with the link to each 'SpotDetails'.
+Here in my Index Template, using Django syntax, is the anchor tag with the link to each 'SpotDetails'.
 ```
 {% block content %}
 
@@ -91,19 +91,20 @@ Here in my Index Template is the anchor tag with the link to each 'SpotDetails'.
 
 {% endblock %}
 ```
-  Details page---- use primary key to get details from that item
+  Details page ------ use primary key to get details from that item
   ![SurfSpotAppDetails](https://user-images.githubusercontent.com/68976585/103727727-d5748400-4f90-11eb-8a85-52037cb052d5.png)
+This is the details page that uses a primary key to get details from the database for that item as well as the ablity to update or delete the spot.
 ```
 def surfApp_details(request, pk):
-    # gets a single instance of the SurfSpot model object from the database
+# gets a single instance of the SurfSpot model object from the database
     spot = get_object_or_404(SurfSpot, pk=pk)
     context = {'spot': spot, }
     return render(request, 'surfApp/surfApp_details.html', context)
 ```
- Update page (edit)----
+ Update page (edit) ------Pulls up populated form from database to be updated and reposted to database.
 ```
 def surfApp_update(request, pk):
-    # means Django expects an integer value and will transfer it to a view as a variable called pk
+# means Django expects an integer value and will transfer it to a view as a variable called pk
     pk = int(pk)
     spot = get_object_or_404(SurfSpot, pk=pk)
  HTTP method POST-- finds the form that was submitted by a user
@@ -119,7 +120,7 @@ def surfApp_update(request, pk):
     context = {'form': form, }
     return render(request, 'surfApp/surfApp_update.html', context)
 ```
- Delete -- from details page, get instance of spot
+ Delete ------ from details page, get instance of spot and redirect to confirm delete message page.
 ```
 def surfApp_delete(request, pk):
     pk = int(pk)
@@ -127,7 +128,7 @@ def surfApp_delete(request, pk):
     context = {'spot': spot, }
     return render(request, 'surfApp/surfApp_delete.html', context)
 ```
- Confirm delete-- renders delete page for confirmation of action
+ Confirm delete ------ renders delete page for confirmation of action
  ![SurfSpotsAppDelete](https://user-images.githubusercontent.com/68976585/103727794-0b196d00-4f91-11eb-8b98-6f1a1667c5f8.png)
 ```
 def confirm_delete(request, pk):
@@ -149,3 +150,4 @@ urlpatterns = [
 ]
 ```
 <h2>Conclusion</h2>
+I enjoyed creating something I would like to use and is close to me personally. I learned a lot about how to, and why, working in virtual environments is such an important process to master. What a great experience to work along side other developers working on their own projects within the main Hobby Tracker app and seeing how many ways to solve a single problem there are. I learned a lot about version control in PyCharm and I liked how easy it became to use once versed. In retrospect, I would have liked to have been able to complete the API/webscraping stories and have each spot be able to get current surf conditions for the day or hour. 
