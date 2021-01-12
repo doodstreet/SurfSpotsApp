@@ -23,6 +23,7 @@ def surfApp_home(request):
  This is the Add your spots page that will display a surf spot form and if filled out properly, will save it to the database 
  and redirect to show the new spot on the index page. If the form is not filled out properly it will request necessary fields 
  to be filled before continuing or canceling.
+ 
 ```
 def surfApp_addSpot(request):
 # gets requested form if exists
@@ -40,6 +41,29 @@ def surfApp_addSpot(request):
         form = SurfSpotForm()
     context = {'form': form, }
     return render(request, 'surfApp/surfApp_addSpot.html',  context)
+```
+My model for this form:
+
+```
+from django.db import models
+#  rating_choices for ratings using an integer for the field
+RATING_CHOICES = [
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+]
+class SurfSpot(models.Model):
+    spotName = models.CharField(max_length=50, verbose_name="Surf Spot Name", default="", null=False)
+    location = models.CharField(max_length=80, verbose_name="County/State", default="", null=False)
+    description = models.TextField(max_length=300, verbose_name="Your Description", default="", blank=True)
+    rating = models.IntegerField(verbose_name="Your Rating", choices=RATING_CHOICES, null=False)
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return self.spotName
 ```
  Index page---- use index function to get database objects and render them on the index page.
  ![SurfSpotAppIndex](https://user-images.githubusercontent.com/68976585/103727699-c1308700-4f90-11eb-89da-e3565d74c35f.png)
