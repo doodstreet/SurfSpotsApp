@@ -12,27 +12,30 @@ Here is a code example of my views for this project:
 This is the Home page View request that opens the home page as well as displays an current list of saved spots on it. 
 ```
 def surfApp_home(request):
-    # get the list of spotNames to show your list of favorite spots on the home page
+# get the list of spotNames to show your list of favorite spots on the home page
     spots = SurfSpot.objects.all()
     context = {'spots': spots}
- link to home page and display requested content
+#link to home page and display requested content
     return render(request, 'surfApp/surfApp_home.html', context)
 ```    
  Add Spot page-----use model to create a form and post to database
  ![SurfSpotAppCreate](https://user-images.githubusercontent.com/68976585/103727616-8e868e80-4f90-11eb-91bc-8ca284f71b18.png)
+ This is the Add your spots page that will display a surf spot form and if filled out properly, will save it to the database 
+ and redirect to show the new spot on the index page. If the form is not filled out properly it will request necessary fields 
+ to be filled before continuing or canceling.
 ```
 def surfApp_addSpot(request):
-    # gets requested form if exists
+# gets requested form if exists
     form = SurfSpotForm(request.POST or None)
     if form.is_valid():
         #  checks that form has the required entries filled in and if
         #  valid with no errors, saves to the database
         form.save()
- when done with saving form, this redirects to the index (list of spots) page
+        #when done with saving form, this redirects to the index (list of spots) page
         return redirect('SpotIndex')
 
     else:
-        # if not saved, print errors to the terminal
+# if not saved, print errors to the terminal
         print(form.errors)
         form = SurfSpotForm()
     context = {'form': form, }
