@@ -65,7 +65,7 @@ class SurfSpot(models.Model):
     def __str__(self):
         return self.spotName
 ```
- Index page---- use index function to get database objects and render them on the index page with link for details.
+ Index page---- 
  ![SurfSpotAppIndex](https://user-images.githubusercontent.com/68976585/103727699-c1308700-4f90-11eb-89da-e3565d74c35f.png)
 This is the Index page that gets all saved spots from the database as dictionary items to render as a list, 
 each spot with a link to its own details page. 
