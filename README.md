@@ -1,14 +1,15 @@
 
 <h2>Surf Spots Python Internship App</h2>
-<p>Hi, my name is Dave Street. I completed Software Developer Boot Camp and earned my certification from The Tech Academy. This was an intership experience  with Prosper I.T. Consulting. This project was a great experience for me using Agile/Scrum methodologies during this two week sprint. I created a Surf Spots  App as part of a much larger Hobby Tracker website and created a database for the App to connect with and log favorite surf spots with full CRUD functionality.
+  Hi, my name is Dave Street. I completed Software Developer Boot Camp and earned my certification from The Tech Academy. This was an intership experience  with Prosper I.T. Consulting. This project was a great experience for me using Agile/Scrum methodologies during this two week sprint. I created a Surf Spots  App as part of a much larger Hobby Tracker website and created a database for the App to connect with and log favorite surf spots with full CRUD functionality.
 This included using Python3 in virtual environments, Pycharm as the IDE and Git as version control..<br>
 <br>
-Here is a code example of my views for this project:</p>
-<br>
+Here is a code example of my views for this project:
 
  Home page ------------
+<br><br>
  ![SurfSpotsAppHome](https://user-images.githubusercontent.com/68976585/103727518-50896a80-4f90-11eb-89ce-df33eeeb3dde.png)
-
+<br>
+This is the Home page View request that opens the home page as well as displays an current list of saved spots on it. 
 ```
 def surfApp_home(request):
     # get the list of spotNames to show your list of favorite spots on the home page
