@@ -1,6 +1,6 @@
 
 <h2>Surf Spots Python Internship App</h2>
-  Hi, my name is Dave Street. I completed Software Developer Boot Camp and earned my certification from The Tech Academy. This was an intership experience  with Prosper I.T. Consulting. This project was a great experience for me using Agile/Scrum methodologies during this two week sprint. I created a Surf Spots  App as part of a much larger Hobby Tracker website and created a database for the App to connect with and log favorite surf spots with full CRUD functionality.
+  This was an intership experience  with Prosper I.T. Consulting. This project was a great experience for me using Agile/Scrum methodologies during a  two week sprint. I created a Surf Spots  App as part of a much larger Hobby Tracker website and created a database for the App to connect with and log favorite surf spots with full CRUD functionality.
 This included using Python3 in virtual environments, Pycharm as the IDE and Git as version control..<br>
 <br>
 Here is a code example of my views for this project:
